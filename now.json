@@ -1,0 +1,32 @@
+{
+    "version": 2,
+    "name": "ramen",
+    "alias": "ramen",
+    "routes": [
+        {
+            "src": "/favicon.ico",
+            "dest": "/favicon.ico"
+        },
+        {
+            "src": "/(\\w+)",
+            "dest": "index.php"
+        }
+    ],
+    "builds": [
+        {
+            "src": "*.php",
+            "use": "@now/php",
+            "config": {
+            "maxLambdaSize": "10mb"
+        }
+        },
+        {
+            "src": "assets/**",
+            "use": "@now/static"
+        },
+        {
+            "src": "favicon.ico",
+            "use": "@now/static"
+        }
+    ]
+}
